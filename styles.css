@@ -1,0 +1,28 @@
+.btn {
+    position: absolute;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: none;
+    top: 30px;
+    left: 50px;
+    color: aqua;
+    background-color: blue;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 30px;
+    transition: 0.3s ease all;
+
+}
+.win {
+    background-color: green;
+
+}
+.faill {
+    background-color: brown;
+}
+.danger {
+    background-color: red;
+}
+.atencion {
+    background-color: yellowgreen;
+}
