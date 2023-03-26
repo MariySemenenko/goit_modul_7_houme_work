@@ -102,7 +102,7 @@ const renderList = (products) => products
 
         productList.push({text: input.value, id: productList.length});//пушимо все в масив з обьєктом
          //зчитую дані з імпута в консоль та вставляю в li
-        insertListItem(creatLi(input.value, input.value)); // передаю дані нa а на екран
+        insertListItem(creatLi(input.value, input.value)); // передаю дані на екран
         input.value = ''; //після передачі на екран чистимо імпуп
     }
 
