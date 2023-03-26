@@ -38,6 +38,7 @@
 //TODO
 //СТВОРИМО СПИСОК на основі готового масиву
 //додамо форму на екран і будемо доповнювати масив новими елементами
+//потім доповнюємо їх новими данними
 const productList = [
     {
         id: 1,
@@ -81,8 +82,11 @@ const productList = [
 const form = document.querySelector('.form');
 const input = document.querySelector('.input');
 
+const creatLi = (id, text) => `<li id="${id}">${text}</li>`;
+
+
 const renderList = (products) => products
- .reduce((acc, {id, text}) => acc + `<li id="${id}">${text}</li>`,'');
+ .reduce((acc, {id, text}) => acc + creatLi(id, text),'');
 
  const insertListItem = (string) => {
     const ul = document.querySelector('.list');//стукаю до li class .list
@@ -96,9 +100,10 @@ const renderList = (products) => products
     const submitHendler = (event) => {
         event.preventDefault();  //зупиняю перезавантаження сторінки
 
-        const li = `<li id="${input.value}">${input.value}</li>`; //зчитую дані з імпута в консоль та вставляю в li
-
-        insertListItem(li); // передаю дані не в консоль а на екран
+        productList.push({text: input.value, id: productList.length});//пушимо все в масив з обьєктом
+         //зчитую дані з імпута в консоль та вставляю в li
+        insertListItem(creatLi(input.value, input.value)); // передаю дані нa а на екран
+        input.value = ''; //після передачі на екран чистимо імпуп
     }
 
     form.addEventListener('submit', submitHendler); 
